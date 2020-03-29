@@ -12,7 +12,13 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
-        $tags = ['home', 'work', 'urgent', 'not important'];
+        $tags = [
+            'home',
+            'work',
+            'urgent',
+            'not_urgent',
+            'children'
+        ];
         foreach ($tags as $tag) {
             Tag::create([
                 'text' => $tag,

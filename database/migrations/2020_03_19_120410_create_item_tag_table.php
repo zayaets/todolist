@@ -19,6 +19,7 @@ class CreateItemTagTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
+            $table->unique(['item_id', 'tag_id']);
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });

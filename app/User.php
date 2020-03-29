@@ -39,6 +39,11 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
+    public function items()
+    {
+        return $this->hasMany(Item::class, 'user_id', 'id');
+    }
+
     public function roles()
     {
         return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');

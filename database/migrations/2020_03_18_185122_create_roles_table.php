@@ -18,7 +18,7 @@ class CreateRolesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->jsonb('permissions')->default(new Expression('(JSON_ARRAY())'));
+//            $table->jsonb('permissions')->default(new Expression('(JSON_ARRAY())'));
             $table->timestamps();
             $table->softDeletes();
         });

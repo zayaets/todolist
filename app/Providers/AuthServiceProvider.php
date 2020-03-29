@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Item;
+use App\Policies\ItemPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -14,6 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
+        Item::class => ItemPolicy::class,
     ];
 
     /**
@@ -25,6 +28,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('isAdmin', 'App\Policies\ItemPolicy@isAdmin');
+        Gate::define('accessItem', 'App\Policies\ItemPolicy@canAccess');
+        Gate::define('create', 'App\Policies\ItemPolicy@create');
     }
 }
