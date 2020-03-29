@@ -117,7 +117,7 @@ class ItemController extends Controller
 
         $request->session()->flash('message', [
             'status' => 1,
-            'text' => 'The task added successfully'
+            'text' => 'The task added successfully.'
         ]);
 
         return back();
@@ -198,7 +198,7 @@ class ItemController extends Controller
 
         $request->session()->flash('message', [
             'status' => 1,
-            'text' => 'The task added successfully'
+            'text' => 'The task edited successfully.'
         ]);
         return back();
     }

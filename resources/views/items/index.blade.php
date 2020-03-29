@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header text-center">My List</div>
 
 
                     <div class="card-body px-md-3">
@@ -56,7 +56,7 @@
                                                     <div class="col-xs-8 col-sm-6 col-md-3 mb-2 mb-md-1 pr-2 px-md-2">
                                                         <form action="{{ route('item_done', ['item' => $item->id]) }}" method="post">
                                                             @csrf
-                                                            <button type="submit"class="btn btn-success btn-sm btn-block text-light">
+                                                            <button type="submit"class="btn btn-success btn-sm btn-block text-light" data-toggle="tooltip" data-placement="top" title="Done">
                                                                 <i class="far fa-check-square"></i>
                                                                 {{--<i class="fas fa-check-circle"></i>--}}
                                                                 {{--<i class="far fa-check-circle"></i>--}}
@@ -68,7 +68,7 @@
                                                     <div class="col-xs-8  col-sm-6 col-md-3 mb-2 mb-md-1 pr-2 px-md-2">
                                                         <form action="{{ route('item_undone', ['item' => $item->id]) }}" method="post">
                                                             @csrf
-                                                            <button type="submit"class="btn btn-secondary btn-sm btn-block text-light">
+                                                            <button type="submit"class="btn btn-secondary btn-sm btn-block text-light" data-toggle="tooltip" data-placement="top" title="Undone">
                                                                 <i class="fas fa-undo"></i>
                                                                 {{--<i class="fas fa-undo-alt"></i>--}}
                                                                 {{--Undo--}}
@@ -76,7 +76,7 @@
                                                         </form>
                                                     </div>
                                                     <div class="col-xs-8  col-sm-6 col-md-3 mb-2 mb-md-1 pr-2 px-md-2">
-                                                        <a href="{{ route('edit_item', ['item' => $item->id]) }}" class="btn btn-info btn-sm btn-block text-light">
+                                                        <a href="{{ route('edit_item', ['item' => $item->id]) }}" class="btn btn-info btn-sm btn-block text-light" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="far fa-edit"></i>
                                                             {{--<i class="fas fa-edit"></i>--}}
                                                             {{--Edit--}}
@@ -85,7 +85,7 @@
                                                     <div class="col-xs-8  col-sm-6 col-md-3 mb-2 mb-md-1 pr-2 px-md-2">
                                                         <form action="{{ route('delete_item', ['item' => $item->id]) }}" method="post">
                                                             @csrf
-                                                            <button type="submit" class="btn btn-warning btn-sm btn-block">
+                                                            <button type="submit" class="btn btn-warning btn-sm btn-block" data-toggle="tooltip" data-placement="top" title="Delete">
                                                                 <i class="far fa-trash-alt"></i>
                                                                 {{--<i class="fas fa-trash-alt"></i>--}}
                                                                 {{--Delete--}}
@@ -99,54 +99,15 @@
 
                                     </tbody>
                                 </table>
-
                                 {!! $items->appends(request()->except('page'))->render() !!}
                             </div>
-
-
-
-                            {{--<ul class="list-group">
-                                @foreach($items as $item)
-                                    <li class="list-group-item">
-                                        @if($item->status == 0)
-                                            <i class="far fa-square"></i>
-                                        @else
-                                            <i class="fas fa-check-square"></i>
-                                        @endif
-                                        {{ $item->text }}
-
-                                        @if (isset($item->tags))
-                                            @foreach($item->tags as $key => $tag)
-                                                <a href="#" class="badge badge-primary" style="/*background-color: --}}{{--{{ $colors[array_rand($colors)] }}--}}{{--;*/">{{ $tag->text }}</a>
-                                            @endforeach
-                                        @endif
-
-
-
-
-                                        <div class="btn-group float-right">
-                                            <form action="{{ route('item_done', ['item' => $item->id]) }}" method="post">
-                                                @csrf
-                                                <button type="submit"class="btn btn-success text-light">Done</button>
-                                            </form>
-
-                                            <form action="{{ route('item_undone', ['item' => $item->id]) }}" method="post">
-                                                @csrf
-                                                <button type="submit"class="btn btn-secondary text-light">Undone</button>
-                                            </form>
-
-                                            <a href="{{ route('edit_item', ['item' => $item->id]) }}" class="btn btn-info text-light">Edit</a>
-
-                                            <form action="{{ route('delete_item', ['item' => $item->id]) }}" method="post">
-                                                @csrf
-                                                <button type="submit" class="btn btn-warning">Delete</button>
-                                            </form>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>--}}
-{{--                            {{ $items->links() }}--}}
                         @endif
+
+                        <script>
+                            $(function () {
+                                $('[data-toggle="tooltip"]').tooltip()
+                            })
+                        </script>
 
 
 
