@@ -48,6 +48,7 @@ class ItemController extends Controller
         return view('items.index', [
             'items' => $items,
 //            'colors' => $colors,
+            'tag' => isset($tag) ? $tag : null,
         ]);
     }
 

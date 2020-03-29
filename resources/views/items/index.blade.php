@@ -8,7 +8,7 @@
                     <div class="card-header">Dashboard</div>
 
 
-                    <div class="card-body px-0 px-md-3">
+                    <div class="card-body px-md-3">
                         <div class="btn-toolbar mb-3">
                             @can('create')
                                 <a href="{{ route('create_item') }}" class="btn btn-primary float-left">New</a>
@@ -17,15 +17,15 @@
 
 
                         @if($items->count())
+                            @if(isset($tag))
+                                <div class="alert alert-info">All records which contain tag <strong>#{{ $tag }}</strong> are displaying. <a href="{{ route('list_items') }}" class="link link-info d-block">Show All Records</a></div>
+                            @endif
                             <div class="table-responsive-sm">
                                 <table class="table">
                                     <thead>
                                     <tr  class="text-center">
                                         <th scope="col">@sortablelink('status', 'Status')</th>
-                                        <th scope="col">
-                                            @sortablelink('text', 'Task')
-                                            <a href="{{ route('list_items') }}" class="link link-info d-block">Show All Tags</a>
-                                        </th>
+                                        <th scope="col">@sortablelink('text', 'Task')</th>
                                         <th scope="col">{{--Tags <a href="{{ route('list_items') }}" class="link link-info d-block">Show All Tags</a>--}}</th>
                                     </tr>
                                     </thead>
