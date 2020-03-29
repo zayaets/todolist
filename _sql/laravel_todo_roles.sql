@@ -1,2 +1,0 @@
-INSERT INTO roles (id, name, slug, created_at, updated_at, deleted_at) VALUES (1, 'User', 'user', '2020-03-23 19:02:45', '2020-03-23 19:02:45', null);
-INSERT INTO roles (id, name, slug, created_at, updated_at, deleted_at) VALUES (2, 'Admin', 'admin', '2020-03-23 19:02:46', '2020-03-23 19:02:46', null);

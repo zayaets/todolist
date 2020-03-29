@@ -1,6 +1,0 @@
-INSERT INTO items (id, text, status, user_id, created_at, updated_at, deleted_at) VALUES (1, 'buy coffee', 0, 1, '2020-03-23 19:02:46', '2020-03-23 19:02:46', null);
-INSERT INTO items (id, text, status, user_id, created_at, updated_at, deleted_at) VALUES (2, 'walk the dog', 0, 2, '2020-03-23 19:02:46', '2020-03-23 19:02:46', null);
-INSERT INTO items (id, text, status, user_id, created_at, updated_at, deleted_at) VALUES (3, 'bake cake', 0, 1, '2020-03-23 19:02:46', '2020-03-23 19:02:46', null);
-INSERT INTO items (id, text, status, user_id, created_at, updated_at, deleted_at) VALUES (4, 'write essay', 0, 1, '2020-03-23 19:02:46', '2020-03-23 19:02:46', null);
-INSERT INTO items (id, text, status, user_id, created_at, updated_at, deleted_at) VALUES (5, 'clean the house', 0, 2, '2020-03-23 19:02:46', '2020-03-23 19:02:46', null);
-INSERT INTO items (id, text, status, user_id, created_at, updated_at, deleted_at) VALUES (6, 'cook dinner', 0, 2, '2020-03-23 19:02:46', '2020-03-23 19:02:46', null);
